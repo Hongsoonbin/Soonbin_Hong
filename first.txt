@@ -1,0 +1,24 @@
+pollution <- read.scv("C:\Users\Hong\Desktop\SKKU_DataScience_2015-master\SKKU_DataScience_2015-master\data_sets")
+pop_mean <- mean(pollution$POP)
+
+
+mean, variance and standard deviation
+calss object type, ls(), X<-95, math
+vectors length of vectors
+sequences, x<-1:10
+livrary, update.packages(), install.packages('name')  - install.packages('igraph')  이거하고 library('igraph')
+plot (label axis, change plot points)
+head
+pairs
+lm
+abline
+hist
+
+
+ds <- (2,4,6)
+
+
+pairs 
+
+
+pollution <- read.csv("C:/Users/Hong/Desktop/pollution.csv")   이거 열린다.
