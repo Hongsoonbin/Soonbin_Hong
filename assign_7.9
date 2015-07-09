@@ -1,0 +1,86 @@
+Regressiong
+
+#question1 - ignored
+
+#question2
+
+#(a)
+first <- c(20,32,35,34,40,51,52,56,57,68)
+second <- c(23,34,36,44,42,51,54,57,54,62)
+plot(first,second)
+r <- cor(first,second)
+SE <-sqrt((1-r^2)/(length(first)-2))
+lm(second ~ first)
+q1 <- lm(second ~ first)
+abline(q1,col="red")
+summary(q1)
+str(q1)
+
+#(b)
+they has a relationship and linear replications
+#(c)
+summary(q1)
+they has a correlation because p-value is over 0.05
+#(d)
+standard error is not significant because p-value is under 0.05. it ist 0.0191
+#(e)
+confint(q1)
+rt<- cor.test(first,second)
+rt$conf.int
+
+              2.5 %     97.5 %
+(Intercept) 2.0913557 17.6767633
+first       0.6376403  0.9720649
+
+#question3
+first3 <- c(2000,3200,3500,3400,4000,5100,5200,5600,5700,6800)
+second3 <- c(53,64,66,74,72,81,84,87,84,92)
+
+#(a)
+lm(second ~ first3)
+q3a <- lm(second ~ first3)
+summary(q3a)
+cor(first3,second)
+
+correlation is 0.969
+
+#(b)
+lm(second3 ~ first)
+q3b <- lm(second3 ~ first)
+summary(q3b)
+cor(first,second3)
+
+#question3
+#3a
+d1 <- c(-1.3,-0.5,-0.3,0.2,0.1,0.5,1.0,0.3,0.4,0.5,0.1,0.2,0.5,1.3,1.2,1.4,1.6,1.6,1.8,3.1)
+d2 <- c(4,22,0,0,11,13,17,25,24,27,29,33,33,42,33,20,19,19,25,65)
+
+plot(d1,d2)
+
+#3b
+m <- lm(d2 ~ d1)
+abline(m)
+m
+
+#3c
+answer b= 9.9555 a= SE t df p =-/002  reject null H0
+
+summary(m)
+a <- m$coefficients[1]
+b <- m$coefficients[2]
+
+a= 16.175
+b= 10.037
+
+#4d
+
+d1_p <- c(-1.3,-0.5,-0.3,0.2,0.1,0.5,1.0,0.3,0.4,0.5,0.1,0.2,0.5,1.3,1.2,1.4,1.6,1.6,1.8)
+d2_p <- c(4,22,0,0,11,13,17,25,24,27,29,33,33,42,33,20,19,19,25)
+m_p <-(d2_p ~ d1_p)
+abline(m_p)
+summary(m_p)
+
+d3 <- mat.or.vec(20,1)
+for(i in 1:length(d3)){
+  d3[i] = b*d1[i]+a
+}
